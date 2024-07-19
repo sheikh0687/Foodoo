@@ -12,6 +12,10 @@ import MapKit
 class CustomPointAnnotation: MKPointAnnotation {
     
     var imageName: String!
+    var providerName: String!
+    var providerAddress: String!
+    var providerRating: String!
     var point:String!
     var providerId:String!
+    
 }

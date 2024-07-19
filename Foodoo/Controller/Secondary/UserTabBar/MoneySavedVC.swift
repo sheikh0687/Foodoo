@@ -6,24 +6,41 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class MoneySavedVC: UIViewController {
 
+    @IBOutlet weak var lbl_Money: UILabel!
+    @IBOutlet weak var lbl_C02e: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        GetProfile()
+    }
 
-        // Do any additional setup after loading the view.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func btn_Back(_ sender: UIButton) {
+        if LanguageManager.shared.isRightToLeft {
+            toggleRight()
+        } else {
+           toggleLeft()
+        }
     }
-    */
+}
 
+extension MoneySavedVC {
+    
+    func GetProfile()
+    {
+        Api.shared.get_Profile(self) { responseData in
+            let obj = responseData
+            self.lbl_Money.text = "\(obj.save_money ?? "") CAD"
+            self.lbl_C02e.text = "\(obj.co2e ?? "") KWH"
+        }
+    }
+    
 }

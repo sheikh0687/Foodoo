@@ -1,39 +1,39 @@
 
 /* Class = "UIButton"; configuration.title = "Select Time"; ObjectID = "04m-hJ-pAw"; */
-"04m-hJ-pAw.configuration.title" = "Select Time";
+"04m-hJ-pAw.configuration.title" = "Zaman Seç";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "04m-hJ-pAw"; */
-"04m-hJ-pAw.normalTitle" = "Button";
+"04m-hJ-pAw.normalTitle" = "Buton";
 
 /* Class = "UITextField"; placeholder = "Enter security code"; ObjectID = "0RF-Fd-5Y0"; */
-"0RF-Fd-5Y0.placeholder" = "Enter security code";
+"0RF-Fd-5Y0.placeholder" = "Güvenlik kodunu girin";
 
 /* Class = "UILabel"; text = "Item Added to Cart"; ObjectID = "0TX-ez-CLk"; */
-"0TX-ez-CLk.text" = "Item Added to Cart";
+"0TX-ez-CLk.text" = "Ürün Sepete Eklendi";
 
 /* Class = "UITextField"; placeholder = "Enter expiry date"; ObjectID = "0n1-1n-VcH"; */
-"0n1-1n-VcH.placeholder" = "Enter expiry date";
+"0n1-1n-VcH.placeholder" = "Son kullanma tarihini girin";
 
 /* Class = "UILabel"; text = "Card Number"; ObjectID = "139-6s-hzz"; */
-"139-6s-hzz.text" = "Card Number";
+"139-6s-hzz.text" = "Kart Numarası";
 
 /* Class = "UILabel"; text = "Money Saved & CO2e avoide"; ObjectID = "2hG-fH-z9a"; */
-"2hG-fH-z9a.text" = "Money Saved & CO2e avoide";
+"2hG-fH-z9a.text" = "Tasarruf Edilen Para & Kaçınılan CO2e";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "3pa-im-BYP"; */
 "3pa-im-BYP.placeholder" = "Email";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "48Q-jP-ubF"; */
-"48Q-jP-ubF.text" = "Label";
+"48Q-jP-ubF.text" = "Etiket";
 
 /* Class = "UIButton"; configuration.title = "See All"; ObjectID = "49G-XM-Cb0"; */
-"49G-XM-Cb0.configuration.title" = "See All";
+"49G-XM-Cb0.configuration.title" = "Hepsini Gör";
 
 /* Class = "UITextField"; placeholder = "Add Promo Code"; ObjectID = "4Kb-Bh-78V"; */
-"4Kb-Bh-78V.placeholder" = "Add Promo Code";
+"4Kb-Bh-78V.placeholder" = "Promosyon Kodunu Ekle";
 
 /* Class = "UILabel"; text = "Choose Your Language"; ObjectID = "4tH-a9-IbN"; */
-"4tH-a9-IbN.text" = "Choose Your Language";
+"4tH-a9-IbN.text" = "Dilini Seç";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "53O-OO-EeD"; */
 "53O-OO-EeD.placeholder" = "Email";
@@ -42,124 +42,124 @@
 "5C3-LY-OYZ.placeholder" = "Email";
 
 /* Class = "UILabel"; text = "Money Saved"; ObjectID = "5VO-43-AWR"; */
-"5VO-43-AWR.text" = "Money Saved";
+"5VO-43-AWR.text" = "Tasarruf Edilen Para";
 
 /* Class = "UIButton"; normalTitle = "Top Up"; ObjectID = "62V-KK-OpR"; */
-"62V-KK-OpR.normalTitle" = "Top Up";
+"62V-KK-OpR.normalTitle" = "Yükle";
 
 /* Class = "UILabel"; text = "About"; ObjectID = "6Wd-cV-rRu"; */
-"6Wd-cV-rRu.text" = "About";
+"6Wd-cV-rRu.text" = "Hakkında";
 
 /* Class = "UILabel"; text = "Today 20:00 - 23:00"; ObjectID = "6zr-3R-L13"; */
-"6zr-3R-L13.text" = "Today 20:00 - 23:00";
+"6zr-3R-L13.text" = "Bugün 20:00 - 23:00";
 
 /* Class = "UIButton"; normalTitle = "Update"; ObjectID = "7UY-D0-Fcr"; */
-"7UY-D0-Fcr.normalTitle" = "Update";
+"7UY-D0-Fcr.normalTitle" = "Güncelle";
 
 /* Class = "UILabel"; text = "Forgot Password"; ObjectID = "7gq-We-uZL"; */
-"7gq-We-uZL.text" = "Forgot Password";
+"7gq-We-uZL.text" = "Şifrenizi mi unuttunuz";
 
 /* Class = "UILabel"; text = "A code has been sent to +918982484814"; ObjectID = "7p1-BE-Ufh"; */
-"7p1-BE-Ufh.text" = "A code has been sent to +918982484814";
+"7p1-BE-Ufh.text" = "Bir kod +918982484814 numaralı telefona gönderildi";
 
 /* Class = "UILabel"; text = "Your Item successfully added to your cart"; ObjectID = "8Dh-Ti-biB"; */
-"8Dh-Ti-biB.text" = "Your Item successfully added to your cart";
+"8Dh-Ti-biB.text" = "Ürününüz başarıyla sepetinize eklendi";
 
 /* Class = "UIButton"; normalTitle = "$ 40"; ObjectID = "8lF-o4-N7C"; */
 "8lF-o4-N7C.normalTitle" = "$ 40";
 
 /* Class = "UITextField"; placeholder = "New Password"; ObjectID = "9Ok-le-WIW"; */
-"9Ok-le-WIW.placeholder" = "New Password";
+"9Ok-le-WIW.placeholder" = "Yeni Şifre";
 
 /* Class = "UITextField"; placeholder = "First Name"; ObjectID = "9si-bo-8EY"; */
-"9si-bo-8EY.placeholder" = "First Name";
+"9si-bo-8EY.placeholder" = "Ad";
 
 /* Class = "UILabel"; text = "Enter verification code"; ObjectID = "AAf-5I-thB"; */
-"AAf-5I-thB.text" = "Enter verification code";
+"AAf-5I-thB.text" = "Doğrulama kodunu girin";
 
 /* Class = "UILabel"; text = "Your Balance"; ObjectID = "Agp-jG-LaA"; */
-"Agp-jG-LaA.text" = "Your Balance";
+"Agp-jG-LaA.text" = "Bakiyeniz";
 
 /* Class = "UILabel"; text = "Language "; ObjectID = "ApR-8w-6OW"; */
-"ApR-8w-6OW.text" = "Language ";
+"ApR-8w-6OW.text" = "Dil";
 
 /* Class = "UILabel"; text = "Rating"; ObjectID = "Auf-Ok-nrq"; */
-"Auf-Ok-nrq.text" = "Rating";
+"Auf-Ok-nrq.text" = "Puan";
 
 /* Class = "UITextField"; placeholder = "First Name"; ObjectID = "B1W-gE-oYz"; */
-"B1W-gE-oYz.placeholder" = "First Name";
+"B1W-gE-oYz.placeholder" = "Ad";
 
 /* Class = "UIButton"; normalTitle = "Login"; ObjectID = "Bvx-do-OUd"; */
-"Bvx-do-OUd.normalTitle" = "Login";
+"Bvx-do-OUd.normalTitle" = "Giriş Yap";
 
 /* Class = "UILabel"; text = "Enter your email address to reset your password"; ObjectID = "C9z-hs-Cat"; */
-"C9z-hs-Cat.text" = "Enter your email address to reset your password";
+"C9z-hs-Cat.text" = "Şifrenizi sıfırlamak için e-posta adresinizi girin";
 
 /* Class = "UITextView"; text = "Type something"; ObjectID = "CCU-BX-V5l"; */
-"CCU-BX-V5l.text" = "Type something";
+"CCU-BX-V5l.text" = "Bir şey yazın";
 
 /* Class = "UILabel"; text = "C02e avoide"; ObjectID = "COm-7g-fzl"; */
-"COm-7g-fzl.text" = "C02e avoide";
+"COm-7g-fzl.text" = "CO2e kaçınılan";
 
 /* Class = "UILabel"; text = "Name On Card"; ObjectID = "E85-8x-J3D"; */
-"E85-8x-J3D.text" = "Name On Card";
+"E85-8x-J3D.text" = "Kart Üzerindeki İsim";
 
 /* Class = "UIButton"; configuration.title = "Arabic"; ObjectID = "Ei9-ja-yBy"; */
-"Ei9-ja-yBy.configuration.title" = "Arabic";
+"Ei9-ja-yBy.configuration.title" = "Arapça";
 
 /* Class = "UIButton"; normalTitle = "Save"; ObjectID = "Ep8-8V-tbX"; */
-"Ep8-8V-tbX.normalTitle" = "Save";
+"Ep8-8V-tbX.normalTitle" = "Kaydet";
 
 /* Class = "UILabel"; text = "OTP Code Verification"; ObjectID = "Fzv-xI-gCx"; */
-"Fzv-xI-gCx.text" = "OTP Code Verification";
+"Fzv-xI-gCx.text" = "OTP Kod Doğrulaması";
 
 /* Class = "UILabel"; text = "Chicken skewers with slices sweet peppers"; ObjectID = "G6X-vw-dHj"; */
-"G6X-vw-dHj.text" = "Chicken skewers with slices sweet peppers";
+"G6X-vw-dHj.text" = "Tatlı biber dilimleri ile tavuk şişler";
 
 /* Class = "UIButton"; normalTitle = "Pickup the order"; ObjectID = "GJH-SA-MrB"; */
-"GJH-SA-MrB.normalTitle" = "Pickup the order";
+"GJH-SA-MrB.normalTitle" = "Siparişi Al";
 
 /* Class = "UILabel"; text = "Vegan"; ObjectID = "GL6-ML-fQm"; */
 "GL6-ML-fQm.text" = "Vegan";
 
 /* Class = "UILabel"; text = "Amount"; ObjectID = "H1L-wV-nNF"; */
-"H1L-wV-nNF.text" = "Amount";
+"H1L-wV-nNF.text" = "Miktar";
 
 /* Class = "UILabel"; text = "Security Code"; ObjectID = "H1v-uO-KXz"; */
-"H1v-uO-KXz.text" = "Security Code";
+"H1v-uO-KXz.text" = "Güvenlik Kodu";
 
 /* Class = "UIButton"; normalTitle = "Resend"; ObjectID = "Het-Gf-hDe"; */
-"Het-Gf-hDe.normalTitle" = "Resend";
+"Het-Gf-hDe.normalTitle" = "Tekrar Gönder";
 
 /* Class = "UILabel"; text = "Invite a Friend"; ObjectID = "HuY-q6-pVc"; */
-"HuY-q6-pVc.text" = "Invite a Friend";
+"HuY-q6-pVc.text" = "Bir Arkadaşı Davet Et";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "IQB-1Z-2t5"; */
-"IQB-1Z-2t5.text" = "Label";
+"IQB-1Z-2t5.text" = "Etiket";
 
 /* Class = "UITextField"; placeholder = "Mobile"; ObjectID = "ISY-L0-eD9"; */
-"ISY-L0-eD9.placeholder" = "Mobile";
+"ISY-L0-eD9.placeholder" = "Mobil";
 
 /* Class = "UILabel"; text = "Magic Bags"; ObjectID = "Igh-FA-Ne2"; */
-"Igh-FA-Ne2.text" = "Magic Bags";
+"Igh-FA-Ne2.text" = "Sihirli Çantalar";
 
 /* Class = "UILabel"; text = "Arbaz sheikh"; ObjectID = "IrX-gE-Zh5"; */
 "IrX-gE-Zh5.text" = "Arbaz sheikh";
 
 /* Class = "UITextField"; placeholder = "Referal Code (Optional)"; ObjectID = "Iwl-bh-xKa"; */
-"Iwl-bh-xKa.placeholder" = "Referal Code (Optional)";
+"Iwl-bh-xKa.placeholder" = "Referans Kodu (İsteğe Bağlı)";
 
 /* Class = "UILabel"; text = "2ddddeee"; ObjectID = "J1G-G7-zlj"; */
 "J1G-G7-zlj.text" = "2ddddeee";
 
 /* Class = "UITextField"; placeholder = "Enter name on card"; ObjectID = "JkU-zA-sLz"; */
-"JkU-zA-sLz.placeholder" = "Enter name on card";
+"JkU-zA-sLz.placeholder" = "Kart Üzerindeki İsmi Girin";
 
 /* Class = "UILabel"; text = "Notifications"; ObjectID = "K93-Ji-X6S"; */
-"K93-Ji-X6S.text" = "Notifications";
+"K93-Ji-X6S.text" = "Bildirimler";
 
 /* Class = "UIButton"; normalTitle = "DONE"; ObjectID = "KQf-e0-B3d"; */
-"KQf-e0-B3d.normalTitle" = "DONE";
+"KQf-e0-B3d.normalTitle" = "BİTTİ";
 
 /* Class = "UILabel"; text = "McDonald's"; ObjectID = "Kg1-8I-Cpw"; */
 "Kg1-8I-Cpw.text" = "McDonald's";
@@ -168,112 +168,112 @@
 "Kyj-VJ-fMi.text" = "$0.00";
 
 /* Class = "UILabel"; text = "Review McDonalds"; ObjectID = "MQm-u8-Uia"; */
-"MQm-u8-Uia.text" = "Review McDonalds";
+"MQm-u8-Uia.text" = "McDonalds'ı Değerlendir";
 
 /* Class = "UIButton"; normalTitle = "$ 150"; ObjectID = "N9E-ir-cxb"; */
 "N9E-ir-cxb.normalTitle" = "$ 150";
 
 /* Class = "UIButton"; normalTitle = "Restaurants"; ObjectID = "Neh-gJ-ttb"; */
-"Neh-gJ-ttb.normalTitle" = "Restaurants";
+"Neh-gJ-ttb.normalTitle" = "Restoranlar";
 
 /* Class = "UINavigationItem"; title = "Order"; ObjectID = "ODw-Nv-PV4"; */
-"ODw-Nv-PV4.title" = "Order";
+"ODw-Nv-PV4.title" = "Sipariş";
 
 /* Class = "UILabel"; text = "FAQ"; ObjectID = "OHw-vf-R3k"; */
-"OHw-vf-R3k.text" = "FAQ";
+"OHw-vf-R3k.text" = "SSS";
 
 /* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "OzY-bX-XRz"; */
-"OzY-bX-XRz.placeholder" = "Confirm Password";
+"OzY-bX-XRz.placeholder" = "Şifreyi Onaylayın";
 
 /* Class = "UITextField"; placeholder = "Last Name"; ObjectID = "QEA-YA-bYW"; */
-"QEA-YA-bYW.placeholder" = "Last Name";
+"QEA-YA-bYW.placeholder" = "Soyad";
 
 /* Class = "UILabel"; text = "Reviews"; ObjectID = "QHH-1G-IQx"; */
-"QHH-1G-IQx.text" = "Reviews";
+"QHH-1G-IQx.text" = "Yorumlar";
 
 /* Class = "UILabel"; text = "SweetBite Bakery Menu"; ObjectID = "QTs-fl-zcr"; */
-"QTs-fl-zcr.text" = "SweetBite Bakery Menu";
+"QTs-fl-zcr.text" = "SweetBite Fırın Menüsü";
 
 /* Class = "UITextField"; placeholder = "0"; ObjectID = "QhT-5l-K22"; */
 "QhT-5l-K22.placeholder" = "0";
 
 /* Class = "UILabel"; text = "Search for meals"; ObjectID = "QwK-0E-Jwa"; */
-"QwK-0E-Jwa.text" = "Search for meals";
+"QwK-0E-Jwa.text" = "Yemek ara";
 
 /* Class = "UIButton"; normalTitle = "SUBMIT"; ObjectID = "RIu-dE-VTe"; */
-"RIu-dE-VTe.normalTitle" = "SUBMIT";
+"RIu-dE-VTe.normalTitle" = "GÖNDER";
 
 /* Class = "UILabel"; text = "Filter"; ObjectID = "Rfk-pJ-u99"; */
-"Rfk-pJ-u99.text" = "Filter";
+"Rfk-pJ-u99.text" = "Filtre";
 
 /* Class = "UIButton"; normalTitle = "Proceed to checkout"; ObjectID = "Rsk-Ph-wTS"; */
-"Rsk-Ph-wTS.normalTitle" = "Proceed to checkout";
+"Rsk-Ph-wTS.normalTitle" = "Ödeme İşlemine Devam Et";
 
 /* Class = "UIButton"; configuration.title = "See All"; ObjectID = "Rv0-AJ-WgC"; */
-"Rv0-AJ-WgC.configuration.title" = "See All";
+"Rv0-AJ-WgC.configuration.title" = "Hepsini Gör";
 
 /* Class = "UILabel"; text = "0 CAD"; ObjectID = "Rw7-NZ-FET"; */
 "Rw7-NZ-FET.text" = "0 CAD";
 
 /* Class = "UILabel"; text = "Payment "; ObjectID = "SLO-22-82b"; */
-"SLO-22-82b.text" = "Payment ";
+"SLO-22-82b.text" = "Ödeme";
 
 /* Class = "UILabel"; text = "$0.00"; ObjectID = "Szu-kL-KAG"; */
 "Szu-kL-KAG.text" = "$0.00";
 
 /* Class = "UINavigationItem"; title = "Favourite"; ObjectID = "TIe-6e-E5k"; */
-"TIe-6e-E5k.title" = "Favourite";
+"TIe-6e-E5k.title" = "Favori";
 
 /* Class = "UIButton"; normalTitle = "From Time"; ObjectID = "Thu-Oc-bFL"; */
-"Thu-Oc-bFL.normalTitle" = "From Time";
+"Thu-Oc-bFL.normalTitle" = "Başlangıç Saati";
 
 /* Class = "UILabel"; text = "Select a distance 10 Km"; ObjectID = "TlO-bp-Vhe"; */
-"TlO-bp-Vhe.text" = "Select a distance 10 Km";
+"TlO-bp-Vhe.text" = "Mesafeyi Seçin 10 Km";
 
 /* Class = "UILabel"; text = "I have read the Terms & Conditions and accept them"; ObjectID = "Tqw-q4-d10"; */
-"Tqw-q4-d10.text" = "I have read the Terms & Conditions and accept them";
+"Tqw-q4-d10.text" = "Şartlar ve Koşulları okudum ve kabul ediyorum";
 
 /* Class = "UILabel"; text = "Help"; ObjectID = "Tyw-OK-NIN"; */
-"Tyw-OK-NIN.text" = "Help";
+"Tyw-OK-NIN.text" = "Yardım";
 
 /* Class = "UIButton"; configuration.title = "Add to cart"; ObjectID = "UDd-Mf-oub"; */
-"UDd-Mf-oub.configuration.title" = "Add to cart";
+"UDd-Mf-oub.configuration.title" = "Sepete ekle";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "UDd-Mf-oub"; */
-"UDd-Mf-oub.normalTitle" = "Button";
+"UDd-Mf-oub.normalTitle" = "Buton";
 
 /* Class = "UIButton"; normalTitle = "Magic Bags"; ObjectID = "UoF-Vy-oV9"; */
-"UoF-Vy-oV9.normalTitle" = "Magic Bags";
+"UoF-Vy-oV9.normalTitle" = "Sihirli Çantalar";
 
 /* Class = "UILabel"; text = "Location"; ObjectID = "VhW-Md-01x"; */
-"VhW-Md-01x.text" = "Location";
+"VhW-Md-01x.text" = "Konum";
 
 /* Class = "UILabel"; text = "Change Password"; ObjectID = "Vmz-ol-t2z"; */
-"Vmz-ol-t2z.text" = "Change Password";
+"Vmz-ol-t2z.text" = "Şifreyi Değiştir";
 
 /* Class = "UIButton"; normalTitle = "Send"; ObjectID = "VzO-J9-mUr"; */
-"VzO-J9-mUr.normalTitle" = "Send";
+"VzO-J9-mUr.normalTitle" = "Gönder";
 
 /* Class = "UITextView"; text = "Search Location"; ObjectID = "WGg-Uy-96C"; */
-"WGg-Uy-96C.text" = "Search Location";
+"WGg-Uy-96C.text" = "Konum Ara";
 
 /* Class = "UILabel"; text = "Restuarants"; ObjectID = "WQp-CY-026"; */
-"WQp-CY-026.text" = "Restuarants";
+"WQp-CY-026.text" = "Restoranlar";
 
 /* Class = "UIButton"; normalTitle = "Map"; ObjectID = "WY7-JD-AVM"; */
-"WY7-JD-AVM.normalTitle" = "Map";
+"WY7-JD-AVM.normalTitle" = "Harita";
 
 /* Class = "UIButton"; normalTitle = "Completed"; ObjectID = "XV6-Qi-AYo"; */
-"XV6-Qi-AYo.normalTitle" = "Completed";
+"XV6-Qi-AYo.normalTitle" = "Tamamlandı";
 
 /* Class = "UILabel"; text = "Shop Categories"; ObjectID = "XWl-dW-P6F"; */
-"XWl-dW-P6F.text" = "Shop Categories";
+"XWl-dW-P6F.text" = "Mağaza Kategorileri";
 
 /* Class = "UILabel"; text = "2 Left"; ObjectID = "YEU-CF-iPM"; */
-"YEU-CF-iPM.text" = "2 Left";
+"YEU-CF-iPM.text" = "2 Kaldı";
 
 /* Class = "UIButton"; normalTitle = "To Time"; ObjectID = "YJj-Je-J8s"; */
-"YJj-Je-J8s.normalTitle" = "To Time";
+"YJj-Je-J8s.normalTitle" = "Bitiş Saati";
 
 /* Class = "UILabel"; text = "-$10"; ObjectID = "YbX-mp-I8q"; */
 "YbX-mp-I8q.text" = "-$10";
@@ -282,19 +282,19 @@
 "ZFk-iW-bm7.text" = "$1,200,150";
 
 /* Class = "UILabel"; text = "Road name,Qatar"; ObjectID = "ZrQ-Mi-TqQ"; */
-"ZrQ-Mi-TqQ.text" = "Road name,Qatar";
+"ZrQ-Mi-TqQ.text" = "Yol adı, Katar";
 
 /* Class = "UIButton"; configuration.title = "TopUp"; ObjectID = "Zw0-ez-09r"; */
-"Zw0-ez-09r.configuration.title" = "TopUp";
+"Zw0-ez-09r.configuration.title" = "Yükleme";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Zw0-ez-09r"; */
-"Zw0-ez-09r.normalTitle" = "Button";
+"Zw0-ez-09r.normalTitle" = "Buton";
 
 /* Class = "UILabel"; text = "Invite your friends"; ObjectID = "aV1-DB-IG8"; */
-"aV1-DB-IG8.text" = "Invite your friends";
+"aV1-DB-IG8.text" = "Arkadaşlarını davet et";
 
 /* Class = "UIButton"; normalTitle = "In Progress"; ObjectID = "azD-Sr-Wbz"; */
-"azD-Sr-Wbz.normalTitle" = "In Progress";
+"azD-Sr-Wbz.normalTitle" = "Devam ediyor";
 
 /* Class = "UIButton"; normalTitle = "$ 20"; ObjectID = "azS-Zq-iMB"; */
 "azS-Zq-iMB.normalTitle" = "$ 20";
@@ -303,91 +303,91 @@
 "b7I-BR-xKH.placeholder" = "0";
 
 /* Class = "UIButton"; normalTitle = "Dismiss"; ObjectID = "bF5-h1-ETs"; */
-"bF5-h1-ETs.normalTitle" = "Dismiss";
+"bF5-h1-ETs.normalTitle" = "Kapat";
 
 /* Class = "UITextField"; placeholder = "0"; ObjectID = "bQp-zE-AEd"; */
 "bQp-zE-AEd.placeholder" = "0";
 
 /* Class = "UILabel"; text = "Deit Type"; ObjectID = "bbT-ol-jcV"; */
-"bbT-ol-jcV.text" = "Deit Type";
+"bbT-ol-jcV.text" = "Diyet Türü";
 
 /* Class = "UILabel"; text = "Write to us"; ObjectID = "cHz-tj-mrh"; */
-"cHz-tj-mrh.text" = "Write to us";
+"cHz-tj-mrh.text" = "Bize yazın";
 
 /* Class = "UIButton"; normalTitle = "REGISTER"; ObjectID = "cIr-Xu-mPQ"; */
-"cIr-Xu-mPQ.normalTitle" = "REGISTER";
+"cIr-Xu-mPQ.normalTitle" = "KAYIT OL";
 
 /* Class = "UITextField"; placeholder = "Last Name"; ObjectID = "cdB-hn-x0W"; */
-"cdB-hn-x0W.placeholder" = "Last Name";
+"cdB-hn-x0W.placeholder" = "Soyad";
 
 /* Class = "UILabel"; text = "0 Km"; ObjectID = "csZ-Ir-oi8"; */
 "csZ-Ir-oi8.text" = "0 Km";
 
 /* Class = "UILabel"; text = "Register"; ObjectID = "dAX-2q-hzi"; */
-"dAX-2q-hzi.text" = "Register";
+"dAX-2q-hzi.text" = "Kayıt Ol";
 
 /* Class = "UINavigationItem"; title = "My Order"; ObjectID = "dUM-o7-pYd"; */
-"dUM-o7-pYd.title" = "My Order";
+"dUM-o7-pYd.title" = "Siparişim";
 
 /* Class = "UILabel"; text = "Total to Pay"; ObjectID = "dbU-Zk-Fag"; */
-"dbU-Zk-Fag.text" = "Total to Pay";
+"dbU-Zk-Fag.text" = "Ödenecek Toplam";
 
 /* Class = "UIButton"; configuration.title = "See All"; ObjectID = "dfo-YW-OCy"; */
-"dfo-YW-OCy.configuration.title" = "See All";
+"dfo-YW-OCy.configuration.title" = "Hepsini Gör";
 
 /* Class = "UIButton"; normalTitle = "See All"; ObjectID = "dfo-YW-OCy"; */
-"dfo-YW-OCy.normalTitle" = "See All";
+"dfo-YW-OCy.normalTitle" = "Hepsini Gör";
 
 /* Class = "UIButton"; normalTitle = "Signup Now"; ObjectID = "dp8-ft-UCE"; */
-"dp8-ft-UCE.normalTitle" = "Signup Now";
+"dp8-ft-UCE.normalTitle" = "Şimdi Kayıt Ol";
 
 /* Class = "UILabel"; text = "How can we help you?"; ObjectID = "dvP-zU-n52"; */
-"dvP-zU-n52.text" = "How can we help you?";
+"dvP-zU-n52.text" = "Size nasıl yardımcı olabiliriz?";
 
 /* Class = "UILabel"; text = "English"; ObjectID = "e7E-2M-iOY"; */
-"e7E-2M-iOY.text" = "English";
+"e7E-2M-iOY.text" = "İngilizce";
 
 /* Class = "UILabel"; text = "Discount Food"; ObjectID = "eKz-b9-gfJ"; */
-"eKz-b9-gfJ.text" = "Discount Food";
+"eKz-b9-gfJ.text" = "İndirimli Yemek";
 
 /* Class = "UIButton"; normalTitle = "Save Card"; ObjectID = "eL9-cW-7AA"; */
-"eL9-cW-7AA.normalTitle" = "Save Card";
+"eL9-cW-7AA.normalTitle" = "Kartı Kaydet";
 
 /* Class = "UIButton"; configuration.title = "Turkish"; ObjectID = "ee4-gh-Dpc"; */
-"ee4-gh-Dpc.configuration.title" = "Turkish";
+"ee4-gh-Dpc.configuration.title" = "Türkçe";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "fS8-ts-pix"; */
-"fS8-ts-pix.placeholder" = "Password";
+"fS8-ts-pix.placeholder" = "Şifre";
 
 /* Class = "UILabel"; text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat lobortis egestas viverra magna sed nam. Massa, magna vestibulum, ut neque, sagittis aliquet non sed semper view more"; ObjectID = "fTW-MH-O9v"; */
-"fTW-MH-O9v.text" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat lobortis egestas viverra magna sed nam. Massa, magna vestibulum, ut neque, sagittis aliquet non sed semper view more";
+"fTW-MH-O9v.text" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat lobortis egestas viverra magna sed nam. Massa, magna vestibulum, ut neque, sagittis aliquet non sed semper devamını oku";
 
 /* Class = "UILabel"; text = "Add Extra item"; ObjectID = "fTq-7j-Yyu"; */
-"fTq-7j-Yyu.text" = "Add Extra item";
+"fTq-7j-Yyu.text" = "Ekstra öğe ekleyin";
 
 /* Class = "UILabel"; text = "Discounts"; ObjectID = "fgW-Kh-AHA"; */
-"fgW-Kh-AHA.text" = "Discounts";
+"fgW-Kh-AHA.text" = "İndirimler";
 
 /* Class = "UIButton"; normalTitle = "Go To Cart"; ObjectID = "g9x-ge-dLn"; */
-"g9x-ge-dLn.normalTitle" = "Go To Cart";
+"g9x-ge-dLn.normalTitle" = "Sepete Git";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "gBs-Zo-KSB"; */
-"gBs-Zo-KSB.normalTitle" = "Submit";
+"gBs-Zo-KSB.normalTitle" = "Gönder";
 
 /* Class = "UIButton"; normalTitle = "Listing"; ObjectID = "gmB-3h-Ica"; */
-"gmB-3h-Ica.normalTitle" = "Listing";
+"gmB-3h-Ica.normalTitle" = "Listeleme";
 
 /* Class = "UILabel"; text = "Write down your question and problem and we would be happy to help about it"; ObjectID = "h27-RO-tdh"; */
-"h27-RO-tdh.text" = "Write down your question and problem and we would be happy to help about it";
+"h27-RO-tdh.text" = "Sorunuzu ve probleminizi yazın, size yardımcı olmaktan mutluluk duyarız";
 
 /* Class = "UIButton"; normalTitle = "Items"; ObjectID = "h3g-He-UjU"; */
-"h3g-He-UjU.normalTitle" = "Items";
+"h3g-He-UjU.normalTitle" = "Öğeler";
 
 /* Class = "UIButton"; normalTitle = "Forgot Password?"; ObjectID = "hIs-DJ-UYf"; */
-"hIs-DJ-UYf.normalTitle" = "Forgot Password?";
+"hIs-DJ-UYf.normalTitle" = "Şifrenizi mi unuttunuz?";
 
 /* Class = "UILabel"; text = "Address"; ObjectID = "hKQ-0K-VOD"; */
-"hKQ-0K-VOD.text" = "Address";
+"hKQ-0K-VOD.text" = "Adres";
 
 /* Class = "UILabel"; text = "$ 0.0"; ObjectID = "hSY-Nk-EWc"; */
 "hSY-Nk-EWc.text" = "$ 0.0";
@@ -396,85 +396,85 @@
 "hYj-Af-vhw.placeholder" = "0";
 
 /* Class = "UILabel"; text = "Phone Number"; ObjectID = "hec-rs-nNN"; */
-"hec-rs-nNN.text" = "Phone Number";
+"hec-rs-nNN.text" = "Telefon Numarası";
 
 /* Class = "UIButton"; normalTitle = "$ 100"; ObjectID = "huP-4A-UR9"; */
 "huP-4A-UR9.normalTitle" = "$ 100";
 
 /* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "iNn-7o-eVp"; */
-"iNn-7o-eVp.normalTitle" = "Cancel";
+"iNn-7o-eVp.normalTitle" = "İptal";
 
 /* Class = "UILabel"; text = "Promotion code applied!"; ObjectID = "ilx-Bx-jzh"; */
-"ilx-Bx-jzh.text" = "Promotion code applied!";
+"ilx-Bx-jzh.text" = "Promosyon kodu uygulandı!";
 
 /* Class = "UILabel"; text = "Wallet"; ObjectID = "jXP-BK-8Cp"; */
-"jXP-BK-8Cp.text" = "Wallet";
+"jXP-BK-8Cp.text" = "Cüzdan";
 
 /* Class = "UIButton"; normalTitle = "ITEMS"; ObjectID = "jiA-YA-oef"; */
-"jiA-YA-oef.normalTitle" = "ITEMS";
+"jiA-YA-oef.normalTitle" = "ÖĞELER";
 
 /* Class = "UILabel"; text = "99909099909"; ObjectID = "kuF-cv-3J4"; */
 "kuF-cv-3J4.text" = "99909099909";
 
 /* Class = "UILabel"; text = "Already have an account ?"; ObjectID = "lQ9-wR-45E"; */
-"lQ9-wR-45E.text" = "Already have an account ?";
+"lQ9-wR-45E.text" = "Zaten bir hesabınız var mı?";
 
 /* Class = "UIButton"; normalTitle = "Login Now"; ObjectID = "leN-0b-91E"; */
-"leN-0b-91E.normalTitle" = "Login Now";
+"leN-0b-91E.normalTitle" = "Şimdi Giriş Yap";
 
 /* Class = "UILabel"; text = "Pickup Time"; ObjectID = "lmm-yV-cbi"; */
-"lmm-yV-cbi.text" = "Pickup Time";
+"lmm-yV-cbi.text" = "Teslim Alma Zamanı";
 
 /* Class = "UILabel"; text = "2972 Westheimer Rd. Santa Ana                                       2972 Westheimer Rd. Santa Ana"; ObjectID = "lyZ-GA-f4d"; */
 "lyZ-GA-f4d.text" = "2972 Westheimer Rd. Santa Ana                                       2972 Westheimer Rd. Santa Ana";
 
 /* Class = "UITextField"; placeholder = "Enter card number"; ObjectID = "mD1-Fa-Av2"; */
-"mD1-Fa-Av2.placeholder" = "Enter card number";
+"mD1-Fa-Av2.placeholder" = "Kart numarasını girin";
 
 /* Class = "UIButton"; normalTitle = "$ 50"; ObjectID = "mEw-KB-Vfe"; */
 "mEw-KB-Vfe.normalTitle" = "$ 50";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "mpc-BD-gkK"; */
-"mpc-BD-gkK.normalTitle" = "Submit";
+"mpc-BD-gkK.normalTitle" = "Gönder";
 
 /* Class = "UILabel"; text = "Expiry Date"; ObjectID = "nTT-D1-PwX"; */
-"nTT-D1-PwX.text" = "Expiry Date";
+"nTT-D1-PwX.text" = "Son Kullanma Tarihi";
 
 /* Class = "UILabel"; text = "Forgot Password"; ObjectID = "nWh-RC-6jm"; */
-"nWh-RC-6jm.text" = "Forgot Password";
+"nWh-RC-6jm.text" = "Şifreyi Unuttunuz mu";
 
-/* Class = "UILabel"; text = "You will get discount and copoun code an every new joiner you invite"; ObjectID = "nzV-Hm-vyi"; */
-"nzV-Hm-vyi.text" = "You will get discount and copoun code an every new joiner you invite";
+/* Class = "UILabel"; text = "You will get discount and coupon code on every new joiner you invite"; ObjectID = "nzV-Hm-vyi"; */
+"nzV-Hm-vyi.text" = "Davet ettiğiniz her yeni katılımcı için indirim ve kupon kodu alacaksınız";
 
 /* Class = "UINavigationItem"; title = "My Cart"; ObjectID = "oBG-wP-rel"; */
-"oBG-wP-rel.title" = "My Cart";
+"oBG-wP-rel.title" = "Sepetim";
 
 /* Class = "UILabel"; text = "Food Type"; ObjectID = "oEj-Ei-FqZ"; */
-"oEj-Ei-FqZ.text" = "Food Type";
+"oEj-Ei-FqZ.text" = "Yemek Türü";
 
 /* Class = "UILabel"; text = "Thanks for saving the food!"; ObjectID = "oNH-u3-RD3"; */
-"oNH-u3-RD3.text" = "Thanks for saving the food!";
+"oNH-u3-RD3.text" = "Yemeği kurtardığınız için teşekkürler!";
 
 /* Class = "UIButton"; normalTitle = "$ 30"; ObjectID = "oTz-AI-eOH"; */
 "oTz-AI-eOH.normalTitle" = "$ 30";
 
-/* Class = "UILabel"; text = "Ordered placed successfully"; ObjectID = "pPb-JD-jYn"; */
-"pPb-JD-jYn.text" = "Ordered placed successfully";
+/* Class = "UILabel"; text = "Order placed successfully"; ObjectID = "pPb-JD-jYn"; */
+"pPb-JD-jYn.text" = "Sipariş başarıyla verildi";
 
 /* Class = "UIButton"; configuration.title = "See All"; ObjectID = "qHh-ge-f2A"; */
-"qHh-ge-f2A.configuration.title" = "See All";
+"qHh-ge-f2A.configuration.title" = "Hepsini Gör";
 
 /* Class = "UILabel"; text = "$30"; ObjectID = "rpY-a3-OBA"; */
 "rpY-a3-OBA.text" = "$30";
 
 /* Class = "UILabel"; text = "Find Your Shop"; ObjectID = "rzw-a6-SXQ"; */
-"rzw-a6-SXQ.text" = "Find Your Shop";
+"rzw-a6-SXQ.text" = "Dükkanını Bul";
 
 /* Class = "UILabel"; text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat lobortis egestas viverra magna sed nam. Massa, magna vestibulum, ut neque, sagittis aliquet non sed semper view more"; ObjectID = "sDu-p2-fml"; */
-"sDu-p2-fml.text" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat lobortis egestas viverra magna sed nam. Massa, magna vestibulum, ut neque, sagittis aliquet non sed semper view more";
+"sDu-p2-fml.text" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat lobortis egestas viverra magna sed nam. Massa, magna vestibulum, ut neque, sagittis aliquet non sed semper devamını oku";
 
 /* Class = "UIButton"; normalTitle = "Choose this location"; ObjectID = "tR9-N6-YQJ"; */
-"tR9-N6-YQJ.normalTitle" = "Choose this location";
+"tR9-N6-YQJ.normalTitle" = "Bu konumu seç";
 
 /* Class = "UILabel"; text = "+038 230484"; ObjectID = "tuu-Wp-fN8"; */
 "tuu-Wp-fN8.text" = "+038 230484";
@@ -483,61 +483,61 @@
 "uCG-tw-yIS.normalTitle" = "$ 10";
 
 /* Class = "UINavigationItem"; title = "My Profile"; ObjectID = "uKC-qU-s70"; */
-"uKC-qU-s70.title" = "My Profile";
+"uKC-qU-s70.title" = "Profilim";
 
 /* Class = "UILabel"; text = "0 CAD"; ObjectID = "uR9-Xe-0sj"; */
 "uR9-Xe-0sj.text" = "0 CAD";
 
 /* Class = "UILabel"; text = "Don't have an account?"; ObjectID = "vhA-59-2MY"; */
-"vhA-59-2MY.text" = "Don't have an account?";
+"vhA-59-2MY.text" = "Hesabınız yok mu?";
 
 /* Class = "UIButton"; normalTitle = "Search"; ObjectID = "vlA-Nf-V3f"; */
-"vlA-Nf-V3f.normalTitle" = "Search";
+"vlA-Nf-V3f.normalTitle" = "Ara";
 
 /* Class = "UILabel"; text = "Don't Receive a Code?"; ObjectID = "vvH-Yi-Eli"; */
-"vvH-Yi-Eli.text" = "Don't Receive a Code?";
+"vvH-Yi-Eli.text" = "Kod Almadınız mı?";
 
 /* Class = "UIButton"; configuration.title = "English"; ObjectID = "vvj-fs-v00"; */
-"vvj-fs-v00.configuration.title" = "English";
+"vvj-fs-v00.configuration.title" = "İngilizce";
 
 /* Class = "UILabel"; text = "Invite a friend"; ObjectID = "vvm-Rh-vNq"; */
-"vvm-Rh-vNq.text" = "Invite a friend";
+"vvm-Rh-vNq.text" = "Bir arkadaşını davet et";
 
 /* Class = "UITextField"; placeholder = "Mobile"; ObjectID = "wp2-Pv-y6c"; */
-"wp2-Pv-y6c.placeholder" = "Mobile";
+"wp2-Pv-y6c.placeholder" = "Mobil";
 
 /* Class = "UIButton"; configuration.title = "All Time"; ObjectID = "wzH-dm-V8o"; */
-"wzH-dm-V8o.configuration.title" = "All Time";
+"wzH-dm-V8o.configuration.title" = "Her Zaman";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "wzH-dm-V8o"; */
-"wzH-dm-V8o.normalTitle" = "Button";
+"wzH-dm-V8o.normalTitle" = "Buton";
 
 /* Class = "UILabel"; text = "1"; ObjectID = "xRF-AL-b56"; */
 "xRF-AL-b56.text" = "1";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "xWO-Za-DHr"; */
-"xWO-Za-DHr.placeholder" = "Email";
+"xWO-Za-DHr.placeholder" = "E-posta";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "y6x-hb-7X3"; */
-"y6x-hb-7X3.placeholder" = "Password";
+"y6x-hb-7X3.placeholder" = "Şifre";
 
 /* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "yFC-RQ-lPH"; */
-"yFC-RQ-lPH.placeholder" = "Confirm Password";
+"yFC-RQ-lPH.placeholder" = "Şifreyi Onayla";
 
 /* Class = "UITextField"; placeholder = "Current Password"; ObjectID = "yp2-6R-RBw"; */
-"yp2-6R-RBw.placeholder" = "Current Password";
+"yp2-6R-RBw.placeholder" = "Mevcut Şifre";
 
 /* Class = "UIButton"; normalTitle = "Apply"; ObjectID = "zKd-Yt-VZG"; */
-"zKd-Yt-VZG.normalTitle" = "Apply";
+"zKd-Yt-VZG.normalTitle" = "Uygula";
 
 /* Class = "UILabel"; text = "Total $40.00 for 0 ITEMS"; ObjectID = "zQf-DG-JUi"; */
-"zQf-DG-JUi.text" = "Total $40.00 for 0 ITEMS";
+"zQf-DG-JUi.text" = "Toplam $40.00 için 0 ÖĞE";
 
 /* Class = "UILabel"; text = "What you would get"; ObjectID = "zd6-Rm-ZYb"; */
-"zd6-Rm-ZYb.text" = "What you would get";
+"zd6-Rm-ZYb.text" = "Ne Alacaksınız";
 
-/* Class = "UILabel"; text = "The order has been created now its time to go and pick the food"; ObjectID = "zhn-sz-Vzg"; */
-"zhn-sz-Vzg.text" = "The order has been created now its time to go and pick the food";
+/* Class = "UILabel"; text = "The order has been created, now it's time to go and pick up the food"; ObjectID = "zhn-sz-Vzg"; */
+"zhn-sz-Vzg.text" = "Sipariş oluşturuldu, şimdi gidip yemeği alma zamanı";
 
-/* Class = "UILabel"; text = "Tranctions History"; ObjectID = "zmX-33-pyt"; */
-"zmX-33-pyt.text" = "Tranctions History";
+/* Class = "UILabel"; text = "Transactions History"; ObjectID = "zmX-33-pyt"; */
+"zmX-33-pyt.text" = "İşlem Geçmişi";

@@ -6,24 +6,29 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class ReferFriendVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
 
-        // Do any additional setup after loading the view.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func btn_Back(_ sender: UIButton) {
+        if LanguageManager.shared.isRightToLeft {
+            toggleRight()
+        } else {
+           toggleLeft()
+        }
     }
-    */
-
+    
+    @IBAction func btn_InviteFrnd(_ sender: UIButton) {
+        Utility.doShare(k.emptyString, "Please download the app from the provided url", self)
+    }
 }

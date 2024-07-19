@@ -1,11 +1,10 @@
 //
 //  L102Language.swift
-//  Shif
+//  Localization102
 //
-//  Created by Techimmense Software Solutions on 03/11/23.
+//  Created by Moath_Othman on 2/24/16.
+//  Copyright © 2016 Moath_Othman. All rights reserved.
 //
-
-import Foundation
 
 import UIKit
 
@@ -44,6 +43,6 @@ class L102Language {
     }
 
     class var isRTL: Bool {
-        return L102Language.currentAppleLanguage() == "fr"
+        return L102Language.currentAppleLanguage() == "ar"
     }
 }

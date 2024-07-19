@@ -132,8 +132,8 @@ extension UIViewController {
     
     func showProgressBar() {
         let spinnerActivity = MBProgressHUD.showAdded(to: self.view, animated: true);
-        spinnerActivity.label.text = R.string.localizable.loading();
-        spinnerActivity.detailsLabel.text = R.string.localizable.pleaseWait();
+        spinnerActivity.label.text = "Loading".localiz();
+        spinnerActivity.detailsLabel.text = "Please wait".localiz();
         spinnerActivity.isUserInteractionEnabled = true;
     }
 
@@ -157,7 +157,7 @@ extension UIViewController {
 
     func alert(alertmessage: String) {
         let alert = UIAlertController(title: k.appName, message: alertmessage, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: R.string.localizable.oK(), style: .default, handler: { action in
+        alert.addAction(UIAlertAction(title: "Ok".localiz(), style: .default, handler: { action in
             switch action.style {
             case .default:
                 print("default")
@@ -179,34 +179,34 @@ extension UIViewController {
         return size
     }
     
-//    func datePickerTapped(strFormat:String,mode:UIDatePicker.Mode, completionBlock complete: @escaping (_ dateString: String) -> Void) {
-//        let currentDate = Date()
-//        var dateComponents = DateComponents()
-//        dateComponents.month = -3
-//        var dateString:String = ""
-//        // let threeMonthAgo = Calendar.current.date(byAdding: dateComponents, to: currentDate)
-//        let datePicker = DatePickerDialog(textColor: .darkGray,
-//                                          buttonColor: .black,
-//                                          font: UIFont.boldSystemFont(ofSize: 17),
-//                                          showCancelButton: true)
-//        
-//        datePicker.locale = Locale(identifier: "en_GB")
-//        datePicker.show("Date",
-//                        doneButtonTitle: "Done",
-//                        cancelButtonTitle: "Cancel",
-//                        minimumDate: nil,
-//                        maximumDate: nil,
-//                        datePickerMode: mode) { (date) in
-//            if let dt = date {
-//                let formatter = DateFormatter()
-//                formatter.dateFormat = strFormat
-//                if mode == .date {
-//                    dateString = formatter.string(from: dt)
-//                } else {
-//                    dateString = formatter.string(from: dt)
-//                }
-//                complete(dateString)
-//            }
-//        }
-//    }
+    func datePickerTapped(strFormat:String,mode:UIDatePicker.Mode,type: String, completionBlock complete: @escaping (_ dateString: String) -> Void) {
+        let currentDate = Date()
+        var dateComponents = DateComponents()
+        dateComponents.month = -3
+        var dateString:String = ""
+        // let threeMonthAgo = Calendar.current.date(byAdding: dateComponents, to: currentDate)
+        let datePicker = DatePickerDialog(textColor: .darkGray,
+                                          buttonColor: .black,
+                                          font: UIFont.boldSystemFont(ofSize: 17),
+                                          showCancelButton: true)
+        
+        datePicker.locale = Locale(identifier: "en_GB")
+        datePicker.show(type,
+                        doneButtonTitle: "Done",
+                        cancelButtonTitle: "Cancel",
+                        minimumDate: nil,
+                        maximumDate: nil,
+                        datePickerMode: mode) { (date) in
+            if let dt = date {
+                let formatter = DateFormatter()
+                formatter.dateFormat = strFormat
+                if mode == .date {
+                    dateString = formatter.string(from: dt)
+                } else {
+                    dateString = formatter.string(from: dt)
+                }
+                complete(dateString)
+            }
+        }
+    }
 }

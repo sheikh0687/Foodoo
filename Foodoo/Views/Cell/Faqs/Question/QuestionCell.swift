@@ -9,6 +9,8 @@ import UIKit
 
 class QuestionCell: UITableViewCell {
 
+    @IBOutlet weak var lbl_Question: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,4 +22,7 @@ class QuestionCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func btn_Question(_ sender: UIButton) {
+        
+    }
 }

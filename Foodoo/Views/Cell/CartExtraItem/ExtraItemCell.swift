@@ -9,6 +9,11 @@ import UIKit
 
 class ExtraItemCell: UITableViewCell {
 
+    @IBOutlet weak var lbl_ExtraItmName: UILabel!
+    @IBOutlet weak var lbl_ExtraItmPrice: UILabel!
+    @IBOutlet weak var imgCheck: UIImageView!
+    @IBOutlet weak var img: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

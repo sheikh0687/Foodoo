@@ -2,24 +2,26 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIApplicationSceneManifest</key>
-	<dict>
-		<key>UIApplicationSupportsMultipleScenes</key>
-		<false/>
-		<key>UISceneConfigurations</key>
+	<key>GIDClientID</key>
+	<string>349355553155-2tdb4gtvd221d2j4g6q832oif1o3lh1m.apps.googleusercontent.com</string>
+	<key>CFBundleURLTypes</key>
+	<array>
 		<dict>
-			<key>UIWindowSceneSessionRoleApplication</key>
+			<key>CFBundleURLSchemes</key>
 			<array>
-				<dict>
-					<key>UISceneConfigurationName</key>
-					<string>Default Configuration</string>
-					<key>UISceneDelegateClassName</key>
-					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
-					<key>UISceneStoryboardFile</key>
-					<string>Main</string>
-				</dict>
+				<string>com.googleusercontent.apps.349355553155-2tdb4gtvd221d2j4g6q832oif1o3lh1m</string>
 			</array>
 		</dict>
-	</dict>
+	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This allow us to access your camera to update your profile picture</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Foodoo requires constant access to your phone’s location to notify to user.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Foodoo requires constant access to your phone’s location to notify to user.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This allow us to access your gallary to update your profile picture</string>
 </dict>
 </plist>

@@ -1,27 +1,56 @@
 //
-//  L012Localizer.swift
-//  Shif
+//  Localizer.swift
+//  Localization102
 //
-//  Created by Techimmense Software Solutions on 03/11/23.
+//  Created by Moath_Othman on 2/24/16.
+//  Copyright © 2016 Moath_Othman. All rights reserved.
 //
 
 import Foundation
 import UIKit
-//extension UIApplication {
-//    class func isRTL() -> Bool{
-//        return UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft
-//    }
-//}
+extension UIApplication {
+    class func isRTL() -> Bool{
+        return UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft
+    }
+}
 
 class L102Localizer: NSObject {
     class func DoTheMagic() {
         
         MethodSwizzleGivenClassName(cls: Bundle.self, originalSelector: #selector(Bundle.localizedString(forKey:value:table:)), overrideSelector: #selector(Bundle.specialLocalizedStringForKey(_:value:table:)))
-//        MethodSwizzleGivenClassName(cls: UIApplication.self, originalSelector: #selector(getter: UIApplication.userInterfaceLayoutDirection), overrideSelector: #selector(getter: UIApplication.cstm_userInterfaceLayoutDirection))
-//        MethodSwizzleGivenClassName(cls: UITextField.self, originalSelector: #selector(UITextField.layoutSubviews), overrideSelector: #selector(UITextField.cstmlayoutSubviews))
-//        MethodSwizzleGivenClassName(cls: UILabel.self, originalSelector: #selector(UILabel.layoutSubviews), overrideSelector: #selector(UILabel.cstmlayoutSubviews))
-
+        MethodSwizzleGivenClassName(cls: UIApplication.self, originalSelector: #selector(getter: UIApplication.userInterfaceLayoutDirection), overrideSelector: #selector(getter: UIApplication.cstm_userInterfaceLayoutDirection))
+        MethodSwizzleGivenClassName(cls: UITextField.self, originalSelector: #selector(UITextField.layoutSubviews), overrideSelector: #selector(UITextField.cstmlayoutSubviews))
+        MethodSwizzleGivenClassName(cls: UILabel.self, originalSelector: #selector(UILabel.layoutSubviews), overrideSelector: #selector(UILabel.cstmlayoutSubviews))
+        MethodSwizzleGivenClassName(cls: UIImage.self, originalSelector: #selector(getter: UIImage.flipsForRightToLeftLayoutDirection), overrideSelector: #selector(UIImage.flipHorizontally))
+        
 //        MethodSwizzleGivenClassName(cls: UIView.self, originalSelector: #selector(UIView.layoutSubviews), overrideSelector: #selector(UIView.cstmlayoutSubviews))
+    }
+}
+
+extension UILabel {
+    @objc public func cstmlayoutSubviews() {
+        self.cstmlayoutSubviews()
+        if self.isKind(of: NSClassFromString("UITextFieldLabel")!) {
+            return // handle special case with uitextfields
+        }
+        if self.tag <= 0  {
+            if UIApplication.isRTL()  {
+                if self.textAlignment == .right {
+                    return
+                }
+            } else {
+                if self.textAlignment == .left {
+                    return
+                }
+            }
+        }
+        if self.tag <= 0 {
+            if UIApplication.isRTL()  {
+                self.textAlignment = .right
+            } else {
+                self.textAlignment = .left
+            }
+        }
     }
 }
 
@@ -32,31 +61,44 @@ class L102Localizer: NSObject {
 //            return // handle special case with uitextfields
 //        }
 //        if self.tag <= 0  {
-//            if UIApplication.isRTL()  {
+//            if L102Language.currentAppleLanguage() == "ar" {
 //                if self.textAlignment == .right {
 //                    return
 //                }
+//                self.textAlignment = .right
 //            } else {
 //                if self.textAlignment == .left {
 //                    return
 //                }
-//            }
-//        }
-//        if self.tag <= 0 {
-//            if UIApplication.isRTL()  {
-//                self.textAlignment = .right
-//            } else {
 //                self.textAlignment = .left
 //            }
 //        }
 //    }
 //}
 
+extension UITextField {
+    @objc public func cstmlayoutSubviews() {
+        self.cstmlayoutSubviews()
+        if self.tag <= 0 {
+            if UIApplication.isRTL()  {
+                if self.textAlignment == .right { return }
+                self.textAlignment = .right
+            } else {
+                if self.textAlignment == .left { return }
+                self.textAlignment = .left
+            }
+        }
+        if self.tag == 40 || self.tag == 41 {
+            self.textAlignment = .left
+        }
+    }
+}
+
 //extension UITextField {
 //    @objc public func cstmlayoutSubviews() {
 //        self.cstmlayoutSubviews()
 //        if self.tag <= 0 {
-//            if UIApplication.isRTL()  {
+//            if L102Language.currentAppleLanguage() == "ar" {
 //                if self.textAlignment == .right { return }
 //                self.textAlignment = .right
 //            } else {
@@ -70,18 +112,37 @@ class L102Localizer: NSObject {
 //    }
 //}
 
+extension UIImage {
+    @objc func flipHorizontally() -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
+        let context = UIGraphicsGetCurrentContext()!
+        
+        context.translateBy(x: self.size.width/2, y: self.size.height/2)
+        context.scaleBy(x: -1.0, y: 1.0)
+        context.translateBy(x: -self.size.width/2, y: -self.size.height/2)
+        
+        self.draw(in: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+}
+
+
 var numberoftimes = 0
-//extension UIApplication {
-//    @objc var cstm_userInterfaceLayoutDirection : UIUserInterfaceLayoutDirection {
-//        get {
-//            var direction = UIUserInterfaceLayoutDirection.leftToRight
-//            if L102Language.currentAppleLanguage() == "fr" {
-//                direction = .rightToLeft
-//            }
-//            return direction
-//        }
-//    }
-//}
+extension UIApplication {
+    @objc var cstm_userInterfaceLayoutDirection : UIUserInterfaceLayoutDirection {
+        get {
+            var direction = UIUserInterfaceLayoutDirection.leftToRight
+            if L102Language.currentAppleLanguage() == "ar" {
+                direction = .rightToLeft
+            }
+            return direction
+        }
+    }
+}
 extension Bundle {
     @objc func specialLocalizedStringForKey(_ key: String, value: String?, table tableName: String?) -> String {
         if self == Bundle.main {
@@ -102,7 +163,6 @@ extension Bundle {
         }
     }
 }
-
 func disableMethodSwizzling() {
     
 }

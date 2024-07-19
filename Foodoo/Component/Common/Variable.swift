@@ -13,8 +13,12 @@ var globalUserImage         =       k.userDefault.value(forKey: "user_image")
 
 var isLogout:Bool = false
 
+var is_Navigate:String!
+
 var localTimeZoneIdentifier: String { return
     TimeZone.current.identifier }
+
+var dictSignup:[String:AnyObject] = [:]
 
 struct dataModel {
     var selectedName : String
@@ -23,7 +27,8 @@ struct dataModel {
 
 enum emLang: String {
     case english
-    case french
+    case arabic
+    case turkish
 }
 var cLang: emLang = .english
 
@@ -37,4 +42,9 @@ struct TimeSlot {
     var open_time: String?
     var close_time: String?
     var status: Status
+}
+
+struct ExpandedTableView {
+    var option: [Res_FAQs]
+    var isOpened: Bool = false
 }

@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import MapKit
 
 class UserOrderDetailVC: UIViewController {
-
+    
     @IBOutlet weak var extraItem_TableView: UITableView!
     @IBOutlet weak var extraItem_TableHeight: NSLayoutConstraint!
     @IBOutlet weak var img_CollectionView: UICollectionView!
@@ -28,20 +29,40 @@ class UserOrderDetailVC: UIViewController {
     @IBOutlet weak var lbl_Mobile: UILabel!
     @IBOutlet weak var lbl_Address: UILabel!
     @IBOutlet weak var view_TotalAddedItem: UIView!
+    @IBOutlet weak var lbl_ItemCount: UILabel!
+    @IBOutlet weak var lbl_TotalAmountDt: UILabel!
+    @IBOutlet weak var map_View: MKMapView!
     
     var product_Id = ""
     var provider_Id = ""
     
+    var total_Amount = 0
+    var offer_ItemPrice = 0
+    
+    var cat_Id:String!
+    var cat_Name:String!
+    var product_Name:String!
+    var product_Price:String!
+    var item_Qty:String!
+    var extra_ItemTtlPrice:Int = 0
+    
     var arr_AdditionalItems: [Product_additional] = []
     var arr_ProductImg: [Product_images] = []
     var arr_ProviderReview: [Res_Reviews] = []
+    
+    var extraItem_Id: [Int] = []
+    var extraItem_Name: [String] = []
+    var extraItem_Price: [Int] = []
+    
+    var itemCount:Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.extraItem_TableView.register(UINib(nibName: "ExtraItemCell", bundle: nil), forCellReuseIdentifier: "ExtraItemCell")
         self.review_TableView.register(UINib(nibName: "AllReviewCell", bundle: nil), forCellReuseIdentifier: "AllReviewCell")
         self.img_CollectionView.register(UINib(nibName: "ImgCell", bundle: nil), forCellWithReuseIdentifier: "ImgCell")
-        self.view_TotalAddedItem.isHidden = false
+        self.view_TotalAddedItem.isHidden = true
+        itemCount = Int(self.lbl_ItemCount.text ?? "") ?? 0
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,8 +91,34 @@ class UserOrderDetailVC: UIViewController {
     @IBAction func btn_Likes(_ sender: UIButton) {
         LikeAndUnlikes()
     }
+    
+    @IBAction func btn_AddToCart(_ sender: UIButton) {
+        AddProducts()
+    }
+    
+    @IBAction func btn_Plus(_ sender: UIButton) {
+        itemCount += 1
+        self.lbl_ItemCount.text = String(itemCount)
+        self.view_TotalAddedItem.isHidden = false
+        total_Amount += offer_ItemPrice
+        print(total_Amount)
+        self.lbl_TotalAmountDt.text = "$\(total_Amount).00 for \(itemCount ?? 0) \("ITEMS".localiz())"
+    }
+    
+    @IBAction func btn_Minus(_ sender: UIButton) {
+        if itemCount != 1 {
+            itemCount -= 1
+            self.lbl_ItemCount.text = String(itemCount)
+            total_Amount -= offer_ItemPrice
+            print(total_Amount)
+            self.lbl_TotalAmountDt.text = "$\(total_Amount).00 for \(itemCount ?? 0) \("ITEMS".localiz())"
+        } else {
+            print("No need to minus")
+        }
+    }
 }
 
+// MARK: Api
 extension UserOrderDetailVC {
     
     func GetProductDetails()
@@ -85,22 +132,39 @@ extension UserOrderDetailVC {
         Api.shared.products_Detail(self, paramDict) { responseData in
             let obj = responseData
             self.lbl_ItemName.text = obj.item_name ?? ""
-            self.lbl_ItemPrice.text = "$\(obj.item_price ?? "")"
+            self.lbl_ItemPrice.text = "$\(obj.offer_item_price ?? "")"
             self.lbl_ProviderName.text = obj.rest_details?.provider_name ?? ""
-            self.lbl_Quantity.text = "\(obj.item_quantity ?? "") left"
+            self.lbl_Quantity.text = "\(obj.item_quantity ?? "") \("left".localiz())"
             self.lbl_ItemDescription.text = obj.item_description ?? ""
+            self.offer_ItemPrice = Int(obj.offer_item_price ?? "") ?? 0
+            self.total_Amount = Int(obj.offer_item_price ?? "") ?? 0
             
             self.lbl_AboutItem.text = obj.rest_details?.description ?? ""
             self.lbl_Mobile.text = obj.rest_details?.provider_mobile ?? ""
             self.lbl_Address.text = obj.rest_details?.provider_streat_address ?? ""
             
+            self.cat_Id = obj.cat_id ?? ""
+            self.cat_Name = obj.cat_name ?? ""
+            self.product_Name = obj.item_name ?? ""
+            self.product_Price = obj.item_price ?? ""
+            self.item_Qty = obj.item_quantity ?? ""
+            
+            let coordinate1 = CLLocationCoordinate2D(latitude: Double(obj.rest_details?.lat ?? "") ?? 0.0, longitude: Double(obj.rest_details?.lon ?? "") ?? 0.0)
+
+            let annotation1 = CustomPointAnnotation()
+            annotation1.coordinate = coordinate1
+            annotation1.imageName = ""
+            self.map_View.addAnnotation(annotation1)
+            
+            Utility.zoomMapToAnnotations(self.map_View)
+            
             if let obj_AdditionalItm = obj.product_additional {
                 if obj_AdditionalItm.count > 0 {
                     self.arr_AdditionalItems = obj_AdditionalItm
-                    self.extraItem_TableHeight.constant = CGFloat(obj_AdditionalItm.count * 45)
+                    self.extraItem_TableHeight.constant = CGFloat(obj_AdditionalItm.count * 70)
                 } else {
                     self.arr_AdditionalItems = []
-                    self.extraItem_TableHeight.constant = CGFloat(obj_AdditionalItm.count * 45 - 1)
+                    self.extraItem_TableHeight.constant = CGFloat(obj_AdditionalItm.count * 70 - 1)
                 }
                 self.extraItem_TableView.reloadData()
             }
@@ -115,9 +179,9 @@ extension UserOrderDetailVC {
             }
             
             if obj.like_status == "Yes" {
-                self.btn_LikesOt.setImage(UIImage(systemName: ""), for: <#T##UIControl.State#>)
+                self.btn_LikesOt.setImage(UIImage(named: "HeartFilled"), for: .normal)
             } else {
-                
+                self.btn_LikesOt.setImage(UIImage(named: "HeartUnfilled"), for: .normal)
             }
         }
     }
@@ -130,13 +194,20 @@ extension UserOrderDetailVC {
         print(paramDict)
         
         Api.shared.provider_Reviews(self, paramDict) { responseData in
-            if responseData.count > 0 {
-                self.arr_ProviderReview = responseData
-                self.review_TableHeight.constant = CGFloat(responseData.count * 140)
+            let obj = responseData
+            if obj.status == "1" {
+                if let obj_Result = obj.result {
+                    if obj_Result.count > 0 {
+                        self.arr_ProviderReview = obj_Result
+                        self.review_TableHeight.constant = CGFloat(obj_Result.count * 140)
+                    } else {
+                        self.arr_ProviderReview = []
+                    }
+                    self.review_TableView.reloadData()
+                }
             } else {
-                self.arr_ProviderReview = []
+                self.review_TableHeight.constant = 0
             }
-            self.review_TableView.reloadData()
         }
     }
     
@@ -152,6 +223,46 @@ extension UserOrderDetailVC {
             self.GetProductDetails()
         }
     }
+    
+    func AddProducts()
+    {
+        var paramDict: [String : AnyObject] = [:]
+        paramDict["user_id"] = k.userDefault.value(forKey: k.session.userId) as AnyObject?
+        paramDict["product_id"] = product_Id as AnyObject
+        paramDict["cat_id"] = cat_Id as AnyObject
+        paramDict["cat_name"] = cat_Name as AnyObject
+        paramDict["product_name"] = product_Name as AnyObject
+        paramDict["product_price"] = product_Price as AnyObject
+        paramDict["provider_id"] = provider_Id as AnyObject
+        paramDict["total_amount"] = product_Price as AnyObject
+        paramDict["before_discount_amount"] = product_Price as AnyObject
+        paramDict["extra_item_id"] = extraItem_Id.map{ String($0)}.joined(separator: ",") as AnyObject
+        paramDict["extra_item_name"] = extraItem_Name.joined(separator: ",") as AnyObject
+        paramDict["extra_item_price"] = extraItem_Price.map{ String($0)}.joined(separator: ",") as AnyObject
+        paramDict["extra_item_qty"] = "" as AnyObject
+        paramDict["total_extra_item_price"] = String(extra_ItemTtlPrice) as AnyObject
+        paramDict["quantity"] = item_Qty as AnyObject
+        
+        print(paramDict)
+        
+        Api.shared.addTo_Cart(self, paramDict) { responseData in
+            if responseData.status == "1" {
+                let vc = R.storyboard.main().instantiateViewController(withIdentifier: "PresentPopVC") as! PresentPopVC
+                
+                vc.cloGoToCart = {() in
+                    let vc = R.storyboard.main().instantiateViewController(withIdentifier: "MyCartVC") as! MyCartVC
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+                
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true, completion: nil)
+            } else {
+                debugPrint("Something Went Wrong")
+            }
+        }
+    }
+    
 }
 
 extension UserOrderDetailVC: UITableViewDataSource, UITableViewDelegate {
@@ -170,6 +281,15 @@ extension UserOrderDetailVC: UITableViewDataSource, UITableViewDelegate {
             let obj = self.arr_AdditionalItems[indexPath.row]
             cell.lbl_ExtraItmName.text = obj.item_name ?? ""
             cell.lbl_ExtraItmPrice.text = "$\(obj.item_price ?? "")"
+            
+            if Router.BASE_IMAGE_URL != obj.extra_item_image {
+                Utility.setImageWithSDWebImage(obj.extra_item_image ?? "", cell.img)
+            } else {
+                cell.img.image = R.image.placeholder()
+            }
+            
+            cell.imgCheck.image = extraItem_Id.contains(indexPath.row) ? R.image.rectangleChecked() : R.image.rectangleUncheck()
+                        
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AllReviewCell", for: indexPath) as! AllReviewCell
@@ -192,10 +312,46 @@ extension UserOrderDetailVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if tableView == extraItem_TableView {
-            return 45
+            return 70
         } else {
             return 140
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if extraItem_Id.contains(indexPath.row) {
+            if let index = extraItem_Id.firstIndex(of: indexPath.row) {
+                extraItem_Id.remove(at: index)
+                extraItem_Name.remove(at: index)
+                extraItem_Price.remove(at: index)
+                if self.arr_AdditionalItems.count > 0 {
+                    let obj = self.arr_AdditionalItems[indexPath.row]
+                    total_Amount -= (Int(obj.item_price ?? "") ?? 0)
+                    self.lbl_TotalAmountDt.text = "$\(total_Amount).00 for \(itemCount ?? 0) \("ITEMS".localiz())"
+                    if extraItem_Price.count > 0 {
+                        extra_ItemTtlPrice = extraItem_Price.reduce(0, -)
+                    } else {
+                        extra_ItemTtlPrice = 0
+                    }
+                }
+            }
+        } else {
+            if self.arr_AdditionalItems.count > 0 {
+                let obj = self.arr_AdditionalItems[indexPath.row]
+                extraItem_Id.append(indexPath.row)
+                extraItem_Name.append(obj.item_name ?? "")
+                extraItem_Price.append(Int(obj.item_price ?? "") ?? 0)
+                total_Amount += (Int(obj.item_price ?? "") ?? 0)
+                self.lbl_TotalAmountDt.text = "$\(total_Amount).00 for \(itemCount ?? 0) \("ITEMS".localiz())"
+                if extraItem_Price.count > 0 {
+                    extra_ItemTtlPrice = extraItem_Price.reduce(0, +)
+                } else {
+                    extra_ItemTtlPrice = 0
+                }
+                view_TotalAddedItem.isHidden = false
+            }
+        }
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
 }
 

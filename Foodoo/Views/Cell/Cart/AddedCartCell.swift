@@ -9,15 +9,35 @@ import UIKit
 
 class AddedCartCell: UITableViewCell {
 
+    
+    @IBOutlet weak var lbl_Amount: UILabel!
+    @IBOutlet weak var lbl_ProviderName: UILabel!
+    @IBOutlet weak var lbl_ItemName: UILabel!
+    @IBOutlet weak var item_Img: UIImageView!
+    
+    @IBOutlet weak var lbl_Quantity: UILabel!
+    
+    var cloMinus:(() -> Void)?
+    var cloAdd:(() -> Void)?
+    var cloDelete:(() -> Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
+    @IBAction func btn_Minus(_ sender: UIButton) {
+        self.cloMinus?()
+    }
+    
+    @IBAction func btn_Add(_ sender: UIButton) {
+        self.cloAdd?()
+    }
+    
+    @IBAction func btn_Delete(_ sender: UIButton) {
+        self.cloDelete?()
+    }
 }

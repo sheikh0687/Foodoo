@@ -9,6 +9,8 @@ import UIKit
 
 class FoodTypeCell: UICollectionViewCell {
 
+    @IBOutlet weak var lbl_Name: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

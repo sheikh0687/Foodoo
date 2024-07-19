@@ -6,24 +6,59 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class ContactUsVC: UIViewController {
-
+    
+    @IBOutlet weak var txt_Message: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.txt_Message.addHint("Type something".localiz())
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
     }
-    */
+    
+    @IBAction func btn_Back(_ sender: UIButton) {
+        if LanguageManager.shared.isRightToLeft {
+            toggleRight()
+        } else {
+            toggleLeft()
+        }
+    }
+    
+    @IBAction func btn_Submit(_ sender: UIButton) {
+        if self.txt_Message.hasText {
+            contactInfo()
+        } else {
+            self.alert(alertmessage: "Please enter the message")
+        }
+    }
+}
 
+extension ContactUsVC {
+    
+    func contactInfo()
+    {
+        var paramDict:[String : AnyObject] = [:]
+        paramDict["user_id"] = k.userDefault.value(forKey: k.session.userId) as AnyObject?
+        paramDict["name"] = k.emptyString as AnyObject
+        paramDict["contact_number"] = k.emptyString as AnyObject
+        paramDict["email"] = k.emptyString as AnyObject
+        paramDict["feedback"] = txt_Message.text as AnyObject
+        
+        print(paramDict)
+        
+        Api.shared.send_Feedback(self, paramDict) { responseData in
+            Utility.showAlertWithAction(withTitle: k.appName,
+                                        message: "We will contact you soon",
+                                        delegate: nil,
+                                        parentViewController: self) { bool in
+                self.dismiss(animated: true)
+            }
+        }
+    }
 }

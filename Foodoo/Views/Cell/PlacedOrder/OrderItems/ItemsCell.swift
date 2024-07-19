@@ -9,6 +9,10 @@ import UIKit
 
 class ItemsCell: UITableViewCell {
 
+    @IBOutlet weak var lbl_ItemName: UILabel!
+    @IBOutlet weak var lbl_Amount: UILabel!
+    @IBOutlet weak var lbl_ExtraItem: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

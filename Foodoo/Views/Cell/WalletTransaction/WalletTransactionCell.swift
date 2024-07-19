@@ -9,6 +9,9 @@ import UIKit
 
 class WalletTransactionCell: UITableViewCell {
 
+    @IBOutlet weak var lbl_WalletAmount: UILabel!
+    @IBOutlet weak var lbl_DateTime: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

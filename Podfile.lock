@@ -1,0 +1,81 @@
+PODS:
+  - Alamofire (4.9.1)
+  - Cosmos (25.0.1)
+  - CountryPickerView (3.3.0)
+  - DropDown (2.3.13)
+  - InputMask (6.1.0)
+  - IQKeyboardManagerSwift (7.0.3)
+  - LanguageManager-iOS (1.2.9)
+  - libwebp (1.3.2):
+    - libwebp/demux (= 1.3.2)
+    - libwebp/mux (= 1.3.2)
+    - libwebp/sharpyuv (= 1.3.2)
+    - libwebp/webp (= 1.3.2)
+  - libwebp/demux (1.3.2):
+    - libwebp/webp
+  - libwebp/mux (1.3.2):
+    - libwebp/demux
+  - libwebp/sharpyuv (1.3.2)
+  - libwebp/webp (1.3.2):
+    - libwebp/sharpyuv
+  - R.swift (5.4.0):
+    - R.swift.Library (~> 5.3.0)
+  - R.swift.Library (5.3.0)
+  - SDWebImage/Core (4.4.8)
+  - SDWebImage/WebP (4.4.8):
+    - libwebp (< 2.0, >= 0.5)
+    - SDWebImage/Core
+  - SkeletonView (1.30.4)
+  - SlideMenuControllerSwift (4.0.0)
+  - SwiftyJSON (5.0.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.9.1)
+  - Cosmos
+  - CountryPickerView
+  - DropDown
+  - InputMask
+  - IQKeyboardManagerSwift
+  - LanguageManager-iOS
+  - R.swift (~> 5.4.0)
+  - SDWebImage/WebP
+  - SkeletonView
+  - SlideMenuControllerSwift
+  - SwiftyJSON
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Cosmos
+    - CountryPickerView
+    - DropDown
+    - InputMask
+    - IQKeyboardManagerSwift
+    - LanguageManager-iOS
+    - libwebp
+    - R.swift
+    - R.swift.Library
+    - SDWebImage
+    - SkeletonView
+    - SlideMenuControllerSwift
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Cosmos: 02db0a1c953107049bfd2d7af19ceef55ecb7e98
+  CountryPickerView: 6322ada32a80b0cd721b0267282a5c24f406f263
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  InputMask: 71d291dc54d2deaeac6512afb6ec2304228c0bb7
+  IQKeyboardManagerSwift: f9c5dc36cba16ddd2e51fa7d51c34a2e083029b5
+  LanguageManager-iOS: c1dbb2329fc4b8c0dbc0b0d386a11ea9553a359b
+  libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
+  R.swift: c533450b0f7dc494e0993f5f1a1db925d84c3006
+  R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
+  SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
+  SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
+  SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
+  SwiftyJSON: f5b1bf1cd8dd53cd25887ac0eabcfd92301c6a5a
+
+PODFILE CHECKSUM: 4cd2f5d079d52e3d44dae917d154580f93c2dbe3
+
+COCOAPODS: 1.14.3

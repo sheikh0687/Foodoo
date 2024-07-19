@@ -1,0 +1,205 @@
+USER SIDE ========
+
+//https://techimmense.in/foodoo/webservice/
+//pk_test_51P5rKT2NILLEdEG6EQrPQesnkDXB0ZhKShZad0QydTjsOeEXreHHq55nuhhVKZ5LcJQaH0b7LvAUP78V2BApv1e800t8wiwLp5
+
+  @GET("login") //done
+    Call<ResponseBody> login(@QueryMap HashMap<String, String> map);
+ param.put("email",binding.emailEt.getText().toString());
+        param.put("password",binding.passwordEt.getText().toString());
+        param.put("register_id",FireBaseToken);
+        param.put("lat",""+lat);
+        param.put("lon",""+lon);
+
+    @GET("signup") //done
+    Call<ResponseBody> signup(@QueryMap HashMap<String, String> map);
+  paramdata.put("mobile",number);
+        paramdata.put("mobile_with_code",mobile_str_with_code);
+        paramdata.put("first_name",binding.firstName.getText().toString());
+        paramdata.put("last_name",binding.lastName.getText().toString());
+        paramdata.put("email",binding.emailEt.getText().toString());
+        paramdata.put("password",binding.passwordEt.getText().toString());
+        paramdata.put("register_id",""+FireBaseToken);
+        paramdata.put("ios_register_id","");
+        paramdata.put("type","USER");
+
+        paramdata.put("address",binding.areaNameTv.getText().toString());
+        paramdata.put("lat","");
+        paramdata.put("lon","");
+
+    @GET("verify_number?") //done
+    Call<ResponseBody> verifyOtp(@QueryMap HashMap<String, String> map);
+  paramdata.put("mobile",binding.phoneEt.getText().toString());
+        paramdata.put("mobile_with_code",mobile_str_with_code);
+        paramdata.put("email",binding.emailEt.getText().toString());
+
+ @Multipart
+    @POST("update_profile") //done
+    Call<ProfileResponse> updateProfile(@QueryMap HashMap<String, String> map, @Part MultipartBody.Part filePart);
+     param.put("user_id",session.getUserID());
+        param.put("token",session.getUserDetails().getToken());
+        param.put("first_name",binding.firstName.getText().toString());
+        param.put("last_name",binding.lastName.getText().toString());
+        param.put("mobile",binding.phoneEt.getText().toString());
+
+        param.put("lat","");
+        param.put("lon","");
+
+
+    @GET("get_product_list_by_filter?") //done
+    Call<ResponseBody> getMagicFoods(@QueryMap HashMap<String, String> map);
+ param.put("user_id",session.getUserID());
+        param.put("token",session.getUserDetails().getToken());
+        param.put("cat_id","");
+        param.put("rest_id","");
+        param.put("size","");
+        param.put("type","Magic Food");
+        param.put("lat","");
+        param.put("lon","");
+
+    //https://techimmense.in/foodoo/webservice/get_product_list_by_filter?cat_id
+    @GET("get_product_list_by_filter?") // done
+    Call<ResponseBody> getDiscountFoods(@QueryMap HashMap<String, String> map);
+  param.put("user_id",session.getUserID());
+        param.put("token",session.getUserDetails().getToken());
+        param.put("cat_id","");
+        param.put("rest_id","");
+        param.put("size","");
+        param.put("type","Item");
+        param.put("lat","");
+        param.put("lon","");
+
+    @GET("get_my_fav_product?") // done
+    Call<ResponseBody> getFavProducts(@QueryMap HashMap<String, String> map);
+ param.put("user_id",session.getUserID());
+        param.put("token",session.getUserDetails().getToken());
+        param.put("cat_id","");
+        param.put("rest_id","");
+        param.put("size","");
+        param.put("type","");
+        param.put("lat","");
+        param.put("lon","");
+
+    @GET("add_wallet_amount?") //done
+    Call<ResponseBody> addTopUpinWallet(@QueryMap HashMap<String, String> map);
+ paramdata.put("user_id",session.getUserID());
+        paramdata.put("payment_method","Card");
+        paramdata.put("total_amount",paid_amount);
+        paramdata.put("currency","CAD");
+        paramdata.put("token",token_id);
+        paramdata.put("transaction_type","Top Up");
+
+   @GET("addPayment?") //done
+    Call<ResponseBody> addPayment(@QueryMap HashMap<String, String> map);
+  paramdata.put("user_id",session.getUserID());
+        paramdata.put("payment_method","Card");
+        paramdata.put("total_amount",paid_amount);
+        paramdata.put("provider_id","");
+        paramdata.put("request_id",order_id);
+        paramdata.put("transaction_id","");
+        paramdata.put("currency","CAD");
+        paramdata.put("token",token_id);
+        paramdata.put("transaction_type","Order");
+
+    //https://techimmense.in/foodoo/webservice/get_product_details?product_id=1
+    @GET("get_product_details?") //done
+    Call<ResponseBody> getItemDetail(@Query("user_id") String userID, @Query("product_id") String product_id);
+
+    //getRestaurants
+    @GET("get_all_rest_list?") //done
+    Call<ResponseBody> getRestaurants(@Query("user_id") String userID, @Query("token") String token, @Query("cat_id") String cat_id);
+
+  @GET("forgot_password?") //Done
+    Call<ResponseBody> ForgotCall(@Query("email") String email);
+
+    @GET("send_feedback?")
+    Call<ResponseBody> sendFeedback(@Query("user_id") String user_id, @Query("feedback") String feedback);
+
+ @GET("get_profile?") //done
+    Call<ResponseBody> getProfile(@Query("user_id") String userID);
+
+    @GET("add_to_cart_product?") //done
+    Call<ResponseBody> addToCart(@QueryMap HashMap<String, String> map);
+
+  param.put("user_id", session.getUserID());
+        param.put("product_id", successData.getResult().getId());
+        param.put("cat_id", successData.getResult().getCatId());
+        param.put("cat_name", "" + successData.getResult().getCatName());
+        param.put("product_name", "" + successData.getResult().getItemName());
+        param.put("product_price", "" + itemprice_main);
+        param.put("provider_id", "" + successData.getResult().getProviderId());
+        param.put("total_amount", "" + finalAmount);
+        param.put("before_discount_amount", "" + finalAmount);
+        param.put("extra_item_id", "" + extra_item_id);
+        param.put("extra_item_name", "" + extra_item_name_str);
+        param.put("extra_item_price", "" + extra_item_price_str);
+        param.put("extra_item_qty", "" + extra_item_qty_str);
+        param.put("total_extra_item_price", "" + extraitem_total_according_quantity_str);
+        param.put("quantity", "" + item_count_val);
+
+    @GET("like_unlike_product?") //done
+    Call<ResponseBody> addTofav(@QueryMap HashMap<String, String> map);
+ param.put("user_id", session.getUserID());
+        param.put("product_id", successData.getResult().getId());
+
+    @GET("get_cart?") // done
+    Call<ResponseBody> getMyCart(@Query("user_id") String user_id);
+
+    @GET("delete_cart_item?") //done
+    Call<ResponseBody> deleteCart(@Query("cart_id") String cart_id);
+
+    @GET("update_cart?") // done
+    Call<ResponseBody> updateCart(@Query("cart_id") String cart_id, @Query("type") String type, @Query("quantity") String quantity);
+
+    //https://techimmense.in/foodoo/webservice/add_rating_review_by_order
+    @GET("add_rating_review_by_order?") //done
+    Call<ResponseBody> giveRating(@QueryMap HashMap<String, String> map);
+  param.put("user_id", session.getUserID());
+        param.put("request_id", order_id);
+        param.put("provider_id", provider_id);
+        param.put("driver_id", "");
+        param.put("type", "USER");
+        param.put("rating", ""+binding.ratingbar.getRating());
+        param.put("review", binding.commentEt.getText().toString());
+
+    @GET("place_order?") //done
+    Call<ResponseBody> placeOrder(@QueryMap HashMap<String, String> map);
+  param.put("user_id",session.getUserID());
+        param.put("total_amount",paid_amount);
+        param.put("payment_method","Card");
+        param.put("delivery_fee","0.0");
+        param.put("total_discount_amount",total_discountet_amount);
+        param.put("before_discount_amount",before_discountet_amount);
+        param.put("delivery_date","");
+        param.put("delivery_time","");
+        param.put("address",""+session.getUserDetails().getAddress());
+        param.put("lat",""+session.getUserDetails().getLat());
+        param.put("lon",""+session.getUserDetails().getLon());
+        param.put("date",""+current_date);
+        param.put("time",""+current_time);
+        param.put("delivery_fee_by_admin","0.0");
+        param.put("offer_id","");
+        param.put("offer_check_date","");
+        param.put("offer_code","");
+
+    //https://techimmense.in/foodoo/webservice/get_user_order_by_status?user_id=50&type=Current
+    @GET("get_user_order_by_status?") //done
+    Call<ResponseBody> getUserOrders(@QueryMap HashMap<String, String> map);
+  param.put("user_id", session.getUserID());
+        param.put("type", type);
+        param.put("token", session.getUserDetails().getToken());
+
+    @GET("get_category?") // done
+    Call<ResponseBody> getCategory(@Query("user_id") String userID);
+
+    //https://techimmense.in/foodoo/webservice/get_provider_review_rating?&provider_id=48
+   @GET("get_provider_review_rating?") //done
+    Call<ResponseBody> getProviderRating(@Query("provider_id") String provider_id);
+
+    @GET("get_notification_list?")
+    Call<ResponseBody> getMyNotifications(@Query("user_id") String user_id);
+
+    //https://techimmense.in/foodoo/webservice/get_transaction?user_id=22
+ @GET("get_transaction?") //done
+    Call<ResponseBody> getTransactions(@Query("user_id") String user_id);
+

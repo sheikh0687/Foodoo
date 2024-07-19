@@ -35,18 +35,17 @@ class UserWalletVC: UIViewController {
     }
     
     @IBAction func btn_TopUp(_ sender: UIButton) {
-//        let vc = R.storyboard.main().instantiateViewController(identifier: "PresentTopUpVC") as! PresentTopUpVC
-//        vc.cloNavigate = {( amount ) in
-//            let vc = R.storyboard.main().instantiateViewController(withIdentifier: "PaymentVC") as! PaymentVC
-//            is_Navigate = "TopUP"
-//            print(amount)
-//            vc.amount = Double(amount) ?? 0.0
-//            self.navigationController?.pushViewController(vc, animated: true)
-//        }
-//        vc.modalTransitionStyle = .coverVertical
-//        vc.modalPresentationStyle = .overFullScreen
-//        self.present(vc, animated: true, completion: nil)
-        print("This for commit is working!!")
+        let vc = R.storyboard.main().instantiateViewController(identifier: "PresentTopUpVC") as! PresentTopUpVC
+        vc.cloNavigate = {( amount ) in
+            let vc = R.storyboard.main().instantiateViewController(withIdentifier: "PaymentVC") as! PaymentVC
+            is_Navigate = "TopUP"
+            print(amount)
+            vc.amount = Double(amount) ?? 0.0
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        vc.modalTransitionStyle = .coverVertical
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
     }
 }
 

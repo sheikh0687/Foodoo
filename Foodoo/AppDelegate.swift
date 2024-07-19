@@ -6,9 +6,10 @@
 //
 
 import UIKit
-import SlideMenuControllerSwift
 import CoreLocation
 import Stripe
+import LanguageManager_iOS
+import IQKeyboardManagerSwift
 
 let kAppDelegate = UIApplication.shared.delegate as! AppDelegate
 
@@ -20,14 +21,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var coordinate2 = CLLocation(latitude: 0.0, longitude: 0.0)
     var CURRENT_LAT = ""
     var CURRENT_LON = ""
+    let language = k.userDefault.value(forKey: k.session.language) as? String
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         LocationManager.sharedInstance.delegate = kAppDelegate
         LocationManager.sharedInstance.startUpdatingLocation()
+        if language == nil {
+            LanguageManager.shared.defaultLanguage = .deviceLanguage
+        } else if LanguageManager.shared.currentLanguage == .en {
+            LanguageManager.shared.defaultLanguage = .en
+        } else if LanguageManager.shared.currentLanguage == .ar {
+            LanguageManager.shared.defaultLanguage = .ar
+        } else {
+            LanguageManager.shared.defaultLanguage = .tr
+        }
         Switcher.updateRootVC()
-        
+        IQKeyboardManager.shared.enable = true
         StripeAPI.defaultPublishableKey = "pk_test_51P5rKT2NILLEdEG6EQrPQesnkDXB0ZhKShZad0QydTjsOeEXreHHq55nuhhVKZ5LcJQaH0b7LvAUP78V2BApv1e800t8wiwLp5"
         
         if #available(iOS 13.0, *) {
@@ -40,12 +51,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if #available(iOS 15.0, *) {
                 UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
             }
-        }        
+        }
         return true
     }
-
+    
     // MARK: UISceneSession Lifecycle
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
         
     }

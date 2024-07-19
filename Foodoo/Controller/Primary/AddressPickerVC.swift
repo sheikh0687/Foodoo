@@ -22,7 +22,6 @@ class AddressPickerVC: UIViewController {
     @IBOutlet weak var lbl_Distance: UILabel!
     @IBOutlet weak var slider_Ot: UISlider!
     
-    
     var searchCompleter = MKLocalSearchCompleter()
     var searchResults = [MKLocalSearchCompletion]()
     
@@ -58,6 +57,7 @@ class AddressPickerVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -78,7 +78,7 @@ class AddressPickerVC: UIViewController {
             let region = MKCoordinateRegion(center: self.location_cordinate!, span: span)
             self.mapView.setRegion(region, animated: true)
         } else {
-            alert(alertmessage: "Location Not Found")
+            alert(alertmessage: R.string.localizable.locationNotFound())
         }
     }
     
@@ -87,7 +87,7 @@ class AddressPickerVC: UIViewController {
             self.txtSearchLocation.text = self.address
             self.txtSearchLocation.textColor = .black
         } else {
-            self.txtSearchLocation.text = "Search Location"
+            self.txtSearchLocation.text = R.string.localizable.searchLocation()
             self.tableViewOt.isHidden = true
             searchCompleter.queryFragment = txtSearchLocation.text!
             self.txtSearchLocation.textColor = .lightGray

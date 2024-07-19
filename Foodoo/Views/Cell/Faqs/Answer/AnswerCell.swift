@@ -9,6 +9,8 @@ import UIKit
 
 class AnswerCell: UITableViewCell {
 
+    @IBOutlet weak var lbl_Answer: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

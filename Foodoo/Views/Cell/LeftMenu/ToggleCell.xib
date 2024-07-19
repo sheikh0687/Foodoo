@@ -1,21 +1,65 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ToggleCell" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ToggleCell" rowHeight="108" id="KGk-i7-Jjw" customClass="ToggleCell" customModule="Foodoo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="108"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="300" height="108"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1F8-d3-4V3">
+                        <rect key="frame" x="0.0" y="6" width="300" height="96"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clarity_list-line" translatesAutoresizingMaskIntoConstraints="NO" id="eT0-9X-jks">
+                                <rect key="frame" x="10" y="36" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="6j1-7j-y99"/>
+                                    <constraint firstAttribute="width" constant="24" id="TBl-1j-TQq"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXm-Ys-Wkz">
+                                <rect key="frame" x="44.000000000000007" y="39" width="103.66666666666669" height="18"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FXm-Ys-Wkz" firstAttribute="leading" secondItem="eT0-9X-jks" secondAttribute="trailing" constant="10" id="7Ip-Il-j1c"/>
+                            <constraint firstItem="FXm-Ys-Wkz" firstAttribute="centerY" secondItem="1F8-d3-4V3" secondAttribute="centerY" id="JSI-IX-a4M"/>
+                            <constraint firstItem="eT0-9X-jks" firstAttribute="centerY" secondItem="1F8-d3-4V3" secondAttribute="centerY" id="Jv6-jY-RaZ"/>
+                            <constraint firstItem="eT0-9X-jks" firstAttribute="leading" secondItem="1F8-d3-4V3" secondAttribute="leading" constant="10" id="Wyb-of-ZKT"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="1F8-d3-4V3" secondAttribute="bottom" constant="6" id="Pu8-q2-PpY"/>
+                    <constraint firstItem="1F8-d3-4V3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="dQ7-SD-2Lm"/>
+                    <constraint firstItem="1F8-d3-4V3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="t2C-bT-w1W"/>
+                    <constraint firstAttribute="trailing" secondItem="1F8-d3-4V3" secondAttribute="trailing" id="vwx-b0-7k7"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="img" destination="eT0-9X-jks" id="jed-Zm-eXF"/>
+                <outlet property="lbl_Name" destination="FXm-Ys-Wkz" id="ZaY-X0-RpL"/>
+            </connections>
+            <point key="canvasLocation" x="441.2213740458015" y="-3.5211267605633805"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="clarity_list-line" width="150" height="150"/>
+    </resources>
 </document>

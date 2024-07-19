@@ -9,7 +9,7 @@ import UIKit
 import InputMask
 import SwiftyJSON
 import StripePayments
-
+import LanguageManager_iOS
 
 class PaymentVC: UIViewController {
 
@@ -22,27 +22,24 @@ class PaymentVC: UIViewController {
     @IBOutlet var listerExpiryDate: MaskedTextFieldDelegate!
     
     var amount = 0.0
-    var planId = ""
     var requestId = ""
     var providerId = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.lblAmount.text = "\(k.currency) \(self.amount)"
+        self.lblAmount.text = "\(k.currency) \(self.amount)"
         self.configureListener()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.isHidden = false
-        self.setNavigationBarItem(LeftTitle: "", LeftImage: "black_back", CenterTitle: R.string.localizable.addCard(), CenterImage: "", RightTitle: "", RightImage: "", BackgroundColor: "", BackgroundImage: "", TextColor: "#000000", TintColor: "#000000", Menu: "")
+        self.navigationController?.navigationBar.isHidden = true
         self.tabBarController?.tabBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.isHidden = true
-        self.tabBarController?.tabBar.isHidden = true
     }
     
     @IBAction func btnBack(_ sender: UIButton)
@@ -79,41 +76,14 @@ class PaymentVC: UIViewController {
         let cardState = STPCardValidator.validationState(forCard: cardParams)
         switch cardState {
         case .valid:
-//            self.verifyOtp(cardParams)
             self.generateToken(cardParams)
         case .invalid:
-            self.alert(alertmessage: R.string.localizable.cardIsInvalid())
+            self.alert(alertmessage: "Card is invalid".localiz())
         case .incomplete:
-            self.alert(alertmessage: R.string.localizable.cardIsIncomplete())
+            self.alert(alertmessage: "Card is incomplete".localiz())
         default:
             print("default")
         }
-    }
-    
-    func verifyOtp(_ cardParam: STPCardParams,shouldNavigate: Bool = true) {
-        print(self.paramVerifyOtp())
-        Api.shared.verifyOtp(self, self.paramVerifyOtp()) { (response) in
-            print(response.code ?? 0)
-            if shouldNavigate  {
-                let vc = R.storyboard.main().instantiateViewController(withIdentifier: "OtpVC") as! OtpVC
-                vc.verificationCode = String(response.code ?? "")
-                vc.verifyCode = String(response.code ?? "")
-                vc.card_Param = cardParam
-                vc.cloResend = {() in
-                    self.verifyOtp(cardParam, shouldNavigate: false)
-                }
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-        }
-    }
-    
-    func paramVerifyOtp() -> [String:AnyObject] {
-        var dict : [String:AnyObject] = [:]
-        dict["mobile_with_code"] = k.userDefault.value(forKey: k.session.mobileWithCode) as AnyObject
-        dict["mobile"] = k.userDefault.value(forKey: k.session.userMobile) as AnyObject
-        dict["email"] = k.userDefault.value(forKey: k.session.userEmail) as AnyObject
-        print(dict)
-        return dict
     }
     
     @IBAction func btnSubmit(_ sender: UIButton)
@@ -125,31 +95,36 @@ class PaymentVC: UIViewController {
     {
         STPAPIClient.shared.createToken(withCard: cardParams) { (token: STPToken?, error: Error?) in
             guard let token = token, error == nil else {
-                Utility.showAlertWithAction(withTitle: k.appName, message: R.string.localizable.somethingWentWrong(), delegate: nil, parentViewController: self, completionHandler: { (boool) in
+                Utility.showAlertWithAction(withTitle: k.appName, message: "Something went wrong".localiz(), delegate: nil, parentViewController: self, completionHandler: { (boool) in
                 })
                 return
             }
             print(token.tokenId)
-            self.save_Cards(token.tokenId)
+            self.PaymentIntegration(token.tokenId)
         }
     }
     
-    
-    func save_Cards(_ token: String)
+    func PaymentIntegration(_ tokenId: String)
     {
-        Api.shared.add_Card(self, param_Add_Card(token)) { responseData in
+        var paramDict: [String : AnyObject] = [:]
+        paramDict["user_id"] = k.userDefault.value(forKey: k.session.userId) as AnyObject?
+        paramDict["payment_method"] = "Card" as AnyObject
+        paramDict["total_amount"] = amount as AnyObject
+        paramDict["provider_id"] = providerId as AnyObject
+        paramDict["request_id"] = requestId as AnyObject
+        paramDict["transaction_id"] = "" as AnyObject
+        paramDict["currency"] = "CAD" as AnyObject
+        paramDict["token"] = tokenId as AnyObject
+        if is_Navigate == "Order" {
+            paramDict["transaction_type"] = "Order" as AnyObject
+        } else {
+            paramDict["transaction_type"] = "Top Up" as AnyObject
+        }
+        print(paramDict)
+        
+        Api.shared.add_Payment(self, paramDict) { responseData in
             self.parseDataSaveCard(apiResponse: responseData)
         }
-    }
-    
-    func param_Add_Card(_ tokenId: String) -> [String : AnyObject]
-    {
-        var dict: [String : AnyObject] = [:]
-        dict["user_id"]                = k.userDefault.value(forKey: k.session.userId) as AnyObject
-        dict["customer_id"]            = k.userDefault.value(forKey: k.session.customerId) as AnyObject
-        dict["tok_visa"]               = tokenId as AnyObject
-        print(dict)
-        return dict
     }
     
     func parseDataSaveCard(apiResponse : AnyObject) {
@@ -158,62 +133,19 @@ class PaymentVC: UIViewController {
             print(swiftyJsonVar)
             if(swiftyJsonVar["status"] == "1") {
                 print(swiftyJsonVar["result"]["id"].stringValue)
-                Utility.showAlertWithAction(withTitle: k.appName, message: R.string.localizable.cardSavedSuccessfully(), delegate: nil, parentViewController: self, completionHandler: { (boool) in
+                let vc = R.storyboard.main().instantiateViewController(withIdentifier: "PresentPaymentPopVC") as! PresentPaymentPopVC
+                vc.cloBack = {() in
                     self.navigationController?.popViewController(animated: true)
-                })
-
+                }
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true, completion: nil)
             } else {
-                Utility.showAlertWithAction(withTitle: k.appName, message: R.string.localizable.somethingWentWrong(), delegate: nil, parentViewController: self, completionHandler: { (boool) in
+                Utility.showAlertWithAction(withTitle: k.appName, message: "Something went wrong".localiz(), delegate: nil, parentViewController: self, completionHandler: { (boool) in
                 })
             }
             self.unBlockUi()
         }
     }
-    
-//    func stripePayment(_ token: String)
-//    {
-//        Api.shared.stripePayment(self, self.paramStripe(token)) { responseData in
-//            self.parseDataSaveCard(apiResponse: responseData)
-//        }
-//    }
-//    
-// 
-//    
-//    func paramStripe(_ tokenId: String) -> [String : AnyObject]
-//    {
-//        var dict: [String : AnyObject] = [:]
-//        
-//        dict["user_id"]                = k.userDefault.value(forKey: k.session.userId)! as AnyObject
-//        dict["payment_method"]         = "Card" as AnyObject
-//        dict["currency"]               = "EUR" as AnyObject
-//        dict["total_amount"]           = self.amount as AnyObject
-//        dict["token"]                  = tokenId as AnyObject
-//        dict["request_id"]             = self.requestId as AnyObject
-//        dict["provider_id"]            = self.providerId as AnyObject
-//        print(dict)
-//        return dict
-//    }
-    
-//    func paramAddPlan(_ transactionId: String) -> [String:AnyObject]
-//    {
-//        var dict : [String:AnyObject] = [:]
-//        dict["user_id"]               = k.userDefault.value(forKey: k.session.userId)! as AnyObject
-//        dict["amount"]                = self.amount as AnyObject
-//        dict["transaction_id"]        = transactionId as AnyObject
-//        dict["plan_id"]               = self.planId as AnyObject
-//        return dict
-//    }
-//    
-//    
-//    func addPayment(_ transactionId: String) {
-//        print(self.paramAddPlan(transactionId))
-////        Api.shared.PlanPurchase(self, self.paramAddPlan(transactionId)) { (response) in
-////            Utility.showAlertWithAction(withTitle: k.appName, message: "Transaction Is Successfull", delegate: nil, parentViewController: self, completionHandler: { (boool) in
-////                self.dismiss(animated: true) {
-////                    Switcher.checkLoginStatus()
-////                }
-////            })
-////        }
-//    }
 }
 
